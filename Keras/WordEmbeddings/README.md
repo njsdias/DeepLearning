@@ -1,8 +1,8 @@
-1. Word Embeddings: GloVe and word2vec
+### 1. Word Embeddings: GloVe and word2vec
 
 Word embeddings are a way to transform words in text to numerical vectors so that they can be analyzed by standard machine learning algorithms that require vectors as numerical input.
 
-One-hot encoding is the most basic embedding approach. One-hot encoding represents a word in the text by a vector of the size of the vocabulary, where only the entry corresponding to the word is a one and all the other entries are zero. A major problem with one-hot encoding is that there is no way to represent the similarity between words [(cat, dog), (knife, spoon)]. Similarity between vectors is computed using the dot product, which is the sum of element-wise multiplication between vector elements. In the case of one-hot encoded vectors, the dot product between any two words in a corpus is always zero.
+**One-hot encoding** is the most basic embedding approach. One-hot encoding represents a word in the text by a vector of the size of the vocabulary, where only the entry corresponding to the word is a one and all the other entries are zero. A major problem with one-hot encoding is that there is no way to represent the similarity between words [(cat, dog), (knife, spoon)]. Similarity between vectors is computed using the dot product, which is the sum of element-wise multiplication between vector elements. In the case of one-hot encoded vectors, the dot product between any two words in a corpus is always zero.
 
 To overcome the limitations of one-hot encoding, the NLP community has borrowed techniques from information retrieval (IR) to vectorize text using the document as the context. Notable techniques are TF-IDF (https://en.wikipedia.org/wiki/Tf%E2%80%93idf), latent semantic analysis (LSA) (https://en.wikipedia.org/wiki/Latent_semantic_analysis), and topic modeling (https://en.wikipedia.org/wiki/Topic_model).
 
@@ -13,7 +13,7 @@ This notebook covers the GloVe and word2vec that are the word embedding tecnique
     Building various distributional representations of words in context
     Building models for leveraging embeddings to perform NLP tasks such as sentence parsing and sentiment analysis
 
-2. Distributed representations
+### 2. Distributed representations
 
 Consider the following pair of sentences:
 
