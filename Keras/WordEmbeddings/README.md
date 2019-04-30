@@ -30,3 +30,16 @@ to convert each word to its associated vector such that relations of the followi
 In other words, distributed representation aims to convert words to vectors where the similarity between the vectors correlate with the semantic similarity between the words.
 
 The most well-known word embeddings are word2vec and GloVe.
+
+### 3. word2vec
+The models are unsupervised, taking as input a large corpus of text and producing a vector space of words. 
+Comparing with one-hot enconding:
+- dimensionality: lower than one-hot embedding space
+- embedding space: more dense than one-hot embedding space
+
+Architectures for word2vec:
+- **Continuous Baf of Words (CBOW)**: the model predicts the current word given a window of surrounding words. In addition, the order of the context words does not influence the prediction (that is, the bag of
+words assumption).
+- **Skip-gram**: the model predicts the surrounding words given the center word. According to the authors, CBOW is faster but skip-gram does a better job at predicting infrequent words.
+
+The **shallow neural networks** with the **word2vec** are the most successful techniques used in NLP.
