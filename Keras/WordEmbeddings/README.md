@@ -59,7 +59,7 @@ training corpus. Each element of this matrix represents how often a word represe
 in the context (usually a sequence of words) represented by the column, as shown in the
 following figure:
 
-![Alt text](glove.JPG?raw=true "Title")
+![glove](https://user-images.githubusercontent.com/37953610/57010024-437c7b80-6bf2-11e9-8a90-62c338354c88.JPG)
 
 The GloVe process converts the co-occurrence matrix into a pair of (word, feature) and (feature,
 context) matrices. This process is known as matrix factorization and is done using stochastic
