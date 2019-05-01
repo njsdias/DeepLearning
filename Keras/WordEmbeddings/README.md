@@ -43,3 +43,36 @@ words assumption).
 - **Skip-gram**: the model predicts the surrounding words given the center word. According to the authors, CBOW is faster but skip-gram does a better job at predicting infrequent words.
 
 The **shallow neural networks** with the **word2vec** are the most successful techniques used in NLP.
+
+### 4. GloVe
+The **Glo**bal **Ve**ctors for word representation, or GloVe, embeddings was created by Jeffrey
+Pennington, Richard Socher, and Christopher Manning (for more information refer to the
+article: GloVe: Global Vectors for Word Representation, by J. Pennington, R. Socher, and C.
+Manning, Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing
+(EMNLP), Pp. 1532–1543, 2013). The authors describe GloVe as an **unsupervised learning algorithm**
+for obtaining vector representations for words. **Training is performed on aggregated global wordword
+co-occurrence statistics from a corpus**, and the resulting representations showcase interesting
+linear substructures of the word vector space. GloVe differs from word2vec in that **word2vec is a predictive model while GloVe is a count-based model.
+
+The first step is to construct a large matrix of (word, context) pairs that co-occur in the
+training corpus. Each element of this matrix represents how often a word represented by the row cooccurs
+in the context (usually a sequence of words) represented by the column, as shown in the
+following figure:
+
+![Alt text](glove.JPG?raw=true "Title")
+
+The GloVe process converts the co-occurrence matrix into a pair of (word, feature) and (feature,
+context) matrices. This process is known as matrix factorization and is done using stochastic
+gradient descent (SGD), an iterative numerical method. Rewriting in equation form:
+
+$/R = P = Q /approx R'$
+
+Here, $R$ is the original co-occurrence matrix. We first populate $P$ and $Q$ with random values and
+attempt to reconstruct a matrix $R'$ by multiplying them. The difference between the reconstructed
+matrix $R'$ and the original matrix $R$ tells us how much we need to change the values of $P$ and $Q$ to
+move $R'$ closer to $R$, to minimize the reconstruction error. This is **repeated multiple times** until the
+**SGD converges** and the reconstruction error is below a specified threshold. At that point, the (word,
+feature) matrix is the GloVe embedding. To speed up the process, SGD is often used in parallel mode,
+as outlined in the HOGWILD! paper.
+
+The only tool available to do this in Python is the GloVe-Python project (https://github.com/maciejkula/glove-python), which provides a toy implementation for GloVe on Python. So, the GloVe is not as mature than word2vec in Python, and for this reason is noi explored in this notebook.
