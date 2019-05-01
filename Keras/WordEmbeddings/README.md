@@ -82,7 +82,7 @@ The most common use case for Embeddings is to use pretrained embeddings in some 
 - Learn embeddings from scratch: In the first option, the embedding weights are initialized to small random values and trained using
 backpropagation.
 - Fine-tune learned embeddings from pre-trained GloVe/word2vec models : build a weight matrix from a pre-trained model and initialize the weights of your embedding layer with this weight matrix. The network will update these weights using backpropagation, but the model will converge faster because of good starting weights
-- Look up embeddings from pre-trained GloVe/word2vec models: o look up word embeddings from a pre-trained model, and transform your input to embedded vectors. You can then train any machine learning model (that is, not necessarily even a deep learning network) on the transformed data. If the pre-trained model is trained on a similar domain as the target domain, this usually works very well and is the least expensive option.
+- Look up embeddings from pre-trained GloVe/word2vec models: o look up word embeddings from a pre-trained model, and transform your input to embedded vectors. You can then train any machine learning model (that is, not necessarily even a deep learning network) on the transformed data. If the pre-trained model is trained on a similar domain as the target domain, this usually works very well and is the least expensive option
 
 For general use with English language text:
 - Google's word2vec model trained over 10 billion words from the Google news dataset (1.5 GB): download from here https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing.
