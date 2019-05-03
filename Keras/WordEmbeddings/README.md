@@ -65,7 +65,11 @@ The GloVe process converts the co-occurrence matrix into a pair of (word, featur
 context) matrices. This process is known as matrix factorization and is done using stochastic
 gradient descent (SGD), an iterative numerical method. Rewriting in equation form:
 
+<<<<<<< Updated upstream
 $R = P \times Q \approx R'$
+=======
+$R = P = Q \approx R'$
+>>>>>>> Stashed changes
 
 Here, $R$ is the original co-occurrence matrix. We first populate $P$ and $Q$ with random values and
 attempt to reconstruct a matrix $R'$ by multiplying them. The difference between the reconstructed
