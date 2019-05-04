@@ -62,6 +62,9 @@ into the cell for use at a later time step $t+1$. Just as a traditional neural n
 contained in its weight matrix, **the RNN's parameters are defined by three weight matrices U, V, and
 W, corresponding to the input, output, and hidden state respectively:**
 
+![RNN-structure](https://user-images.githubusercontent.com/37953610/57179693-615b1200-6e78-11e9-8876-11657303ebce.JPG)
+
+
 Another way to look at an RNN to unroll it, as shown in the preceding diagram on the right. **Unrolling
 means that we draw the network out for the complete sequence.** The network shown here is a three-layer
 RNN, suitable for processing three element sequences. **Notice that the weight matrices U, V,
