@@ -51,8 +51,6 @@ of the hidden state at the previous time step and the value of the input at the 
 
 $h_t = \phi (h_{t-1},x_t$
 
-![firsteq](https://latex.codecogs.com/gif.latex?h_t%20%3D%20%5Cphi%28h_%7Bt-1%7D%2Cx_t%29)
-
 $h_t$ and $h_{t-1}$ are the values of the hidden states at the time steps $t$ and $t-1$ respectively, and $x_t$ is the
 value of the input at time $t$. Notice that the equation is recursive, that is, $h_{t-1}$ can be represented in
 terms of $h_{t-2}$ and $x_{t-1}$, and so on, until the beginning of the sequence. **This is how RNNs encode and
