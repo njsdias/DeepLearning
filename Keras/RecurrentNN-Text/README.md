@@ -20,7 +20,7 @@ every element** in the sequence. RNNs are very flexible and have been used to so
 - and image captioning,to name a few. 
 
 The major limitation of the SimpleRNN cell can be overcomed by two variants of SimpleRNN cell:
-— Long Short Term Memory (**LSTM**) 
+- Long Short Term Memory (**LSTM**) 
 - Gated Recurrent Unit (**GRU**)
 
 Both LSTM and GRU are drop-in replacements for the SimpleRNN cell, so just
