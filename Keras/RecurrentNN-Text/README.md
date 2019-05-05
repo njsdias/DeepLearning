@@ -246,4 +246,22 @@ Characteristics:
 - retains the LSTM's resistance to the vanishing gradient problem
 - internal structure is simpler, and therefore is faster to train
 
- The gates for a GRU cell are illustrated in the following diagram:
+ The gates for a GRU cell are illustrated in the following diagram. The GRU cell has two gates:
+ - **update gate (z):** it defines how much previous memory to keep around.
+ - **reset gate (r):** it defines how to combine the new input with the previous memory.
+ 
+ Notice that, there is no persistent cell state distinct from the hidden state as in LSTM.
+ 
+ ![gru](https://user-images.githubusercontent.com/37953610/57197372-64303280-6f5e-11e9-98fb-3cd0d9ebba83.JPG)
+ 
+The following equations define the gating mechanism in a GRU:
+
+![forth-eq](https://user-images.githubusercontent.com/37953610/57197456-6b0b7500-6f5f-11e9-8f1f-5ea448d32b96.JPG)
+ 
+According to several empirical evaluations GRU and LSTM have comparable performance and
+there is no simple way to recommend one or the other for a specific task. While GRUs are faster to
+train and need less data to generalize, in situations where there is enough data, an LSTM's greater
+expressive power may lead to better results. Like LSTMs, GRUs are drop-in replacements for the
+SimpleRNN cell. ( R. Jozefowicz, W. Zaremba, and I. Sutskever, 2015, _An Empirical
+Exploration of Recurrent Network Architectures_, JMLR, 2015 and J. Chung, 2014, _Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling_, arXiv:1412.3555. 2014))
+
