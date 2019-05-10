@@ -2,5 +2,6 @@
 
 This repository is regarding to Deep Learning following the book
 
-![bookKeras](https://user-images.githubusercontent.com/37953610/57397415-8c20cf80-71c4-11e9-84df-59109bf3ca98.JPG)
+![cover_book](https://user-images.githubusercontent.com/37953610/57534810-c90dd300-7338-11e9-90a9-6554f77be3b9.JPG)
+
 
