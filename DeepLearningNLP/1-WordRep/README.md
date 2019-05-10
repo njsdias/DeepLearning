@@ -38,3 +38,24 @@ In a better form of representation, we can create multiple hierarchies or segmen
 words can be assigned various weightages.
 
 ![weight_WR](https://user-images.githubusercontent.com/37953610/57548466-ea7eb700-7358-11e9-819d-1ebb1bb1e873.JPG)
+
+The preceding vectors used for each word does signify the actual
+meaning of the word and provides a better scale with which to make a
+comparison across the words. The newly formed vectors are sufficiently
+capable of answering the kind of relationships being held among words.
+
+![vector_rep_WR1](https://user-images.githubusercontent.com/37953610/57548705-8a3c4500-7359-11e9-81bd-7869066cd352.JPG)
+
+
+The output vectors for different words does retain the linguistic
+regularities and patterns, and this is proven by the linear translations
+of these patterns. For example, the result of the difference between
+the vectors and the words following, vector(France) - vector(Paris) +
+vector(Italy), will be close to vector(Rome)
+
+![vector_rep_WR2](https://user-images.githubusercontent.com/37953610/57548718-96280700-7359-11e9-8fbc-f00830d65c5c.JPG)
+
+Over time, word embeddings have emerged to become one of the
+most important applications of the unsupervised learning domain. The
+semantic relationships offered by word vectors have helped in the NLP
+approaches of neural machine translation, information retrieval, and **question-and-answer applications.**
