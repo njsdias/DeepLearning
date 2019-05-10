@@ -293,8 +293,32 @@ syntactically grouped in the sentence.
 
 ### 4.3 Stochastic Gradient Descent
 It is an iterative algorithm that **minimizes a loss function** by subsequently updating the parameters of the function.
-As we can see from Figure 1-17, we start by thinking of our function as
-a kind of a valley. We imagine a ball rolling down the slope of a valley. Our
-everyday experience tells us that the ball will eventually roll to the bottom
-of the valley. Perhaps we can use this idea to find a minimum for the cost
-function.
+
+### 4.4 Backpropagation
+Understanding this algorithm would definitely give you insights into problems related to deep learning:
+- learning problems
+- slow learning
+- exploding gradients
+- diminishing gradients.
+
+The Backpropagation help us to find the partial derivative of the loss with respect to each weight and it solves the problem of slowness of Gradient Descent. This algorithm is the workhorse of the training procedure for every deep learning algorithm. More detailed information can be found here: www.cs.toronto.edu/~hinton/backprop.html.
+
+Backpropagation consists of two parts see the next figure):
+- Forward pass, wherein we initialize the weights and
+make a feedforward network to store all the values
+- Backward pass, which is performed to have the
+stored values update the weights
+
+![backpropNN](https://user-images.githubusercontent.com/37953610/57545068-1c8c1b00-7351-11e9-93a4-0b2e1fb4a9f6.JPG)
+
+Initially, all the edge weights are randomly assigned. For every input in
+the training dataset, the ANN is activated, and its output is observed. This
+output is compared with the desired output that we already know, and the
+error is “propagated” back to the previous layer. This error is noted, and
+**the weights are “adjusted” accordingly**. This process is repeated until the
+output error is below a predetermined threshold.
+Once the preceding algorithm terminates, we have a “learned” ANN,
+which we consider to be ready to work with “new” inputs. This ANN is said
+to have learned from several examples (labeled data) and from its mistakes
+(error propagation).
+
