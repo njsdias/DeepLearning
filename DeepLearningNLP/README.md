@@ -112,5 +112,189 @@ set of documents using the query terms of each of the documents,
 irrespective of the relationship between the keywords of the query
 within a document.
 
--Text Classifier: Text can be classified into various classes, such as positive and negative.
+- Text Classifier: Text can be classified into various classes, such as positive and negative.
 _TextBlob_ offers many such architectures.
+
+### 4.Introduction to Deep Learning
+The collection of algorithms implemented under deep learning have
+similarities with the relationship between stimuli and neurons in the
+human brain. 
+Neural networks are a biologically inspired paradigm (imitating the
+functioning of the mammalian brain) that enables a computer to learn
+human faculties from observational data. They currently provide solutions
+to many problems: image recognition, handwriting recognition, speech
+recognition, speech analysis, and NLP.
+
+A deep neural network is simply a feed forward neural network with multiple
+hidden layers. If there are many layers in the network, then we say that the network is
+deep.
+
+### 4.1 Basic Structure of Neural Networks
+
+The basic principle behind a neural network is a collection of basic
+elements, artificial neuron or perceptron, that were first developed in the
+1950s by Frank Rosenblatt. They **take several binary inputs**, x1, x2, ..., xN
+and produce a **single binary output** if the sum is greater than the activation
+potential. The neuron is said to **“fire”** whenever activation potential is
+exceeded and **behaves as a step function**. The neurons that fire pass along
+the signal to other neurons connected to their dendrites, which, in turn,
+will fire, if the activation potential is exceeded, thus producing a cascading
+effect.
+
+As not all inputs have the same emphasis, **weights are attached** to each
+of the inputs, x_i to allow the model to assign more importance to some
+inputs. Thus, output is 1, if the weighted sum is greater than activation
+potential or bias, i.e.,
+
+![outputbias](https://user-images.githubusercontent.com/37953610/57540906-bf3e9c80-7345-11e9-8ea7-cc2e2ed09ea8.JPG)
+
+**Sigmoid**
+A modified form was created to behave more predictably, i.e., small changes in weights and bias cause only a small change in output.
+There are two main modifications.
+
+- The inputs can take on any value between 0 and 1, instead of being binary.
+- To make the output behave more smoothly for given
+inputs, x1, x2, …, xN, and weights. w1, w2, …, wN, and bias,
+b, use the sigmoid function:
+
+![sigmoidfunc](https://user-images.githubusercontent.com/37953610/57541133-3ffd9880-7346-11e9-9ca0-e602f2f9a48e.JPG)
+
+![sigmoidplot](https://user-images.githubusercontent.com/37953610/57541489-1002c500-7347-11e9-9a11-200dab4ebf64.JPG)
+
+The smoothness of the exponential function, or σ, means that small
+changes in weights and bias will produce a small change in the output
+from the neuron (the change could be a linear function of changes in
+weights and bias).
+
+**Rectified linear unit (ReLU)**
+This keeps the activation guarded at zero. But this function shows some problems:
+- when the learning rate is set to a higher value, as this triggers weight updating that doesn’t
+allow the activation of the specific neurons, thereby making the gradient
+of that neuron forever zero.
+- the explosion of the activation function, as the input value, xj, is itself the output here
+
+**LReLUs (Leaky ReLUs)**
+These mitigate the issue of dying ReLUs by introducing a marginally reduced
+slope (~0.01) for values of x less than 0. LReLUs do offer successful scenarios, although not always.
+
+**ELU (Exponential Linear Unit)** These offer negative
+values that push the mean unit activations closer to
+zero, thereby speeding the learning process, by moving
+the nearby gradient to the unit natural gradient. For a
+better explanation of ELUs, refer to the original paper
+by Djork-Arné Clevert, available at https://arxiv.
+org/abs/1511.07289.
+
+**Softmax** Also referred to as a normalized exponential
+function, this transforms a set of given real values in
+the range of (0,1), such that the combined sum is 1.
+
+The layers between input and output are referred to as hidden
+layers, and the density and type of connections between layers is the
+configuration.
+
+![MLPpict](https://user-images.githubusercontent.com/37953610/57542434-97513800-7349-11e9-8fa5-556935bc4df5.JPG)
+
+References: 
+
+- articles published by Geoffrey Hinton: (www.cs.toronto.edu/~hinton/)
+- http://deeplearning.net/
+
+### 4.2 Types of Neural Networks**
+For neural networks to learn in a faster and more
+efficient way, various neurons are placed in the network in such a way as to
+maximize the learning of the network for the given problem. 
+If the neurons are placed with connections among them taking
+the form of cycles, then they form networks such as **feedback, recursive,
+or recurrent neural networks.** If, however, the connections between the
+neurons are acyclic, they form networks such as **feedforward neural
+networks.**
+
+**Feedforward Neural Networks**
+Data movement in any feedforward neural network is
+from the input layer to output layer, via present hidden layers, restricting
+any kind of loops. Output from one layer serves as input
+to the next layer, with restrictions on any kind of loops in the network
+architecture.
+
+![feddforwardNN](https://user-images.githubusercontent.com/37953610/57543048-290d7500-734b-11e9-980f-5109a07ec240.JPG)
+
+**Multilayer Perceptrons**
+Multilayer perceptrons (MLPs) belong to the category of feedforward
+neural networks and are made up of three types of layers: an input layer,
+one or more hidden layers, and a final output layer. A normal MLP has the
+following properties:
+- An input layer using linear functions
+- Hidden layers with any number of neurons that using activation function, such as
+sigmoid
+- Output layer that use  an activation function giving any number of outputs
+
+As the output given by an MLP depends only on the current input
+and not on past or future inputs, so MLPs are considered apt for resolving
+**classification problems**.
+
+Following are a few of the features of network architecture that have a
+direct impact on its performance:
+
+- **Hidden layers:** These contribute to the generalization factor of the network. In most cases, a single layer is sufficient to encompass the approximation of any desired function, supported with a sufficient number of neurons.
+- **Hidden neurons:** The number of neurons present across the hidden layer(s) that can be selected by using any kind of formulation. A basic rule of thumb is to select count between one and a few input units. Another means is to use cross-validation and then check the plot between the number of neurons in the hidden layer(s) and the average mean squared error (MSE) with respect to each of the combinations, finally selecting the combination with the least MSE value. It also depends on the degree of nonlinearity or the initial problem dimensionality. It is, thus, more of an adaptive process to add/delete the neurons.
+- **Output nodes:** The count of output nodes is usually equal to the number of classes we want to classify the target value.
+- **Activation functions:** These are applied on the inputs of individual nodes. A set of nonlinear functions are used to make the
+output fall within a desired range, thereby preventing the paralysis of the network. In addition to the nonlinearity, the continuous differentiability of these functions helps in preventing the inhibition of the training of neural networks.
+
+**Convolutional Neural Networks**
+Convolutional neural networks are well adapted **for image recognition and
+handwriting recognition.** Their structure is based on sampling a window
+or portion of an image, detecting its features, and then using the features
+to build a representation. As is evident by this description, this leads to
+the use of several layers, thus these models were the first deep learning
+models.
+
+**Recurrent Neural Networks**
+
+Recurrent neural networks are used when a data pattern changes over time.  An RNN applies the same layer to the input at each time step, using the output (i.e., the state of previous time steps as inputs). RNNs have feedback loops in which the output from the previous firing or time index T is fed as one of the inputs at time index T + 1. 
+
+There might be cases in which the output of the neuron is fed to itself as input. As these are well-suited for applications involving sequences, they are widely used in problems related to videos, which are a time sequence of images, and for **translation purposes**, wherein understanding the next word is based on the context of the previous text. 
+
+There are various types of RNNs:
+
+- Encoding recurrent neural networks: This set of RNNs enables the network to take an input of the sequence form (Figure 1-12).
+
+- Generating recurrent neural networks: Such
+networks basically output a sequence of numbers or
+values, like words in a sentence.
+
+- General recurrent neural networks: These
+networks are a combination of the preceding two
+types of RNNs. General RNNs are used
+to generate sequences and, thus, are widely used in
+NLG (natural language generation) tasks.
+
+**Encoder-Decoder Networks**
+These networks use one network to create an internal
+representation of the input, or to “encode” it, and that representation is
+used as an input for another network to produce the output. This is useful
+to go beyond a classification of the input. The final output can be in the
+same modality, i.e., **language translation**, or a different modality, e.g., **text
+tagging of an image**, based on concepts. For reference, one can refer to the
+paper “Sequence to Sequence Learning with Neural Networks,” published
+by the team at Google: (https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf).
+
+**Recursive Neural Networks**
+In a recursive neural network, a fixed set of weights is
+recursively applied onto the network structure and is primarily used
+to discover the hierarchy or structure of the data. Whereas an RNN is a
+chain, a recursive neural network takes the form of a treelike structure.
+Such networks have great use in the field of NLP, such as **to decipher
+the sentiment of a sentence.** The overall sentiment is not dependent on
+the individual works only, but also on the order in which the words are
+syntactically grouped in the sentence.
+
+
+### 4.3 Stochastic Gradient Descent
+It is an iterative algorithm that **minimizes a loss function** by subsequently updating the parameters of the function.
+As we can see from Figure 1-17, we start by thinking of our function as
+a kind of a valley. We imagine a ball rolling down the slope of a valley. Our
+everyday experience tells us that the ball will eventually roll to the bottom
+of the valley. Perhaps we can use this idea to find a minimum for the cost
+function.
