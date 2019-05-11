@@ -322,3 +322,43 @@ which we consider to be ready to work with “new” inputs. This ANN is said
 to have learned from several examples (labeled data) and from its mistakes
 (error propagation).
 
+### 5. Deep Learning Libraries
+In this section we will highlight only the main featue of the libraries.
+
+**Theano**
+
+It is a numerical
+computation library for Python with syntaxes similar to NumPy. It
+is efficient at performing complex mathematical expressions with
+multidimensional arrays. This makes it is a perfect choice for neural
+networks. The link http://deeplearning.net/software/theano will give the
+user a better idea of the various operations involved.
+
+Many tools have been implemented on top of Theano. Principally, it
+includes
+• Blocks http://blocks.readthedocs.org/en/latest/
+• Keras http://keras.io/
+Lasagne http://lasagne.readthedocs.org/en/
+latest/
+• PyLearn2 http://deeplearning.net/software/
+pylearn2/
+
+
+**TensorFlow**
+
+TensorFlow is an open sourced library by Google for large-scale machine
+learning implementations. It has been designed in such a way that
+computations on CPUs or GPU systems across a single desktop or servers
+or mobile devices are catered to by a single API.
+
+**Keras**
+
+Keras is a highly modular neural networks library, which runs on top of
+Theano or TensorFlow. Keras is one of the libraries which supports both
+CNNs and RNNs and runs effortlessly on GPU and CPU.
+A model is understood as a sequence or a graph of standalone,
+fully configurable modules that can be plugged together with as little
+restrictions as possible. In particular, neural layers, cost functions,
+optimizers, initialization schemes, activation functions, regularization
+schemes are all standalone modules that could be combined to create new
+models.
