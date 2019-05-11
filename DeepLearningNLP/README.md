@@ -322,7 +322,23 @@ which we consider to be ready to work with “new” inputs. This ANN is said
 to have learned from several examples (labeled data) and from its mistakes
 (error propagation).
 
-### 5. Deep Learning Libraries
+### 5. Neural Language Model
+The feedforward neural net language model (FNNLM) proposed by Bengio
+introduces a feedforward neural network consisting of a single hidden
+layer that predicts the future words, in our example, only a single word, of
+the sequence. The components of these original models are still used across current word
+embedding models. Some of these components include the following:
+
+1. _Embedding layer_: This keeps a record of the representation of all the words in the training dataset. It is initialized with a set of random weights. The embedding layer is made up of three parts: 
+- the size of the vocabulary, 
+- the output size of the vector in which all the words will be embedded,
+- the length of the input sequences to the model. 
+The resulting output of an embedding layer is a two-dimensional vector, which has the final embedding for all the words present in the given sequence of words.
+
+2. _Intermediate layer(s)_: The hidden layers, ranging from initial to final layers and with a count of one or more, that produce the representation of the input text data by applying the nonlinear functions in the neural network on the word embeddings of the previous n-words.
+3. _Softmax layer_: This is the final layer of the neural network architecture and returns a probability distribution over all the words present in the input vocabulary.
+
+### 6. Deep Learning Libraries
 In this section we will highlight only the main featue of the libraries.
 
 **Theano**
