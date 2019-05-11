@@ -338,7 +338,32 @@ The resulting output of an embedding layer is a two-dimensional vector, which ha
 2. _Intermediate layer(s)_: The hidden layers, ranging from initial to final layers and with a count of one or more, that produce the representation of the input text data by applying the nonlinear functions in the neural network on the word embeddings of the previous n-words.
 3. _Softmax layer_: This is the final layer of the neural network architecture and returns a probability distribution over all the words present in the input vocabulary.
 
-### 6. Deep Learning Libraries
+### 6. Subsampling Frequent Words
+The subsampling approach was introduced by
+Mikolov et al. in their paper “Distributed Representations of Words and
+Phrases and their Compositionality.” 
+The subsampling uses the the frequency of the words that compounds the corpus to select the words to be kept for modeling purposes by checking the count of overall words as well.
+By including subsampling, significant
+speed is gained in the training process, and word representations are
+learned in a more regular manner.
+
+### 7. Negative Sampling
+Negative sampling is a simplified form of the noise contrastive estimation
+(NCE) approach, as it makes certain assumptions while selecting the
+count of the noise, or negative, samples, and their distribution.
+It is used as an alternative to the hierarchical softmax function. Although
+negative sampling is used at the time of training the model, at the time of
+inference, the full softmax value is to be calculated, to obtain a normalized
+probability score.
+
+**The word2vec models** have helped in achieving better quality of vector
+representations of words by making use of the combination of models on
+a collection of syntactic and semantic language tasks. With the advances
+in the computation resources, faster algorithms, and availability of textual
+data, it is possible to train high quality word vectors as compared to the
+earlier proposed neural network models.
+
+### 8. Deep Learning Libraries
 In this section we will highlight only the main featue of the libraries.
 
 **Theano**
