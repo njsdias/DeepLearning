@@ -1,0 +1,368 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Desconhecido </title></head><body>
+<h3 id="1-information">1. Information</h3>
+<p>This repository is regarding to Deep Learning following the book</p>
+<p><img alt="cover_book" src="https://user-images.githubusercontent.com/37953610/57534810-c90dd300-7338-11e9-90a9-6554f77be3b9.JPG" /></p>
+<h3 id="2-introduction">2. Introduction</h3>
+<p>Natural language processing (NPL) is an extremely difficult task in computer science. Natural language processing, in its simplest form, is the ability for a computer/system to truly understand human language and process it in the same way that a human does.</p>
+<p>Languages present a wide variety of problems that vary from language to language. Structuring or extracting meaningful information from free text represents a great solution, if done in the right manner. Previously, computer scientists broke a language into its grammatical forms, such as parts of speech, phrases, etc., using complex algorithms. Today, deep learning is a key to performing the same exercises.</p>
+<p>One of the things that turns the NLP difficult is the <strong>ambiguity in sentences.</strong> This may be at the word level, at the sentence level, or at the meaning level.</p>
+<p><strong>Some common applications of NLP</strong></p>
+<ul>
+<li>Text Summarization</li>
+<li>Text Tagging</li>
+<li>Named Entity Recognition</li>
+<li>Chatbot</li>
+<li>Speech Recognition</li>
+</ul>
+<p><strong>Common Terms Associated with Language Processing</strong></p>
+<ul>
+<li>Phonetics/phonology: The study of linguistic sounds and their relations to written words</li>
+<li>Morphology: The study of internal structures of words/composition of words</li>
+<li>Syntax:The study of the structural relationships among words in a sentence</li>
+<li>Semantics: The study of the meaning of words and how these combine to form the
+meaning of sentences</li>
+<li>Pragmatics: Situational use of language sentences</li>
+<li>
+<p>Discourse: A linguistic unit that is larger than a single sentence (context)</p>
+</li>
+<li>
+<p>Stemming: means removing affixes from words and returning the root word (which may not be a real word)</p>
+</li>
+<li>Lemmatizing: is similar to stemming, but the difference is that the result of lemmatizing is a real word.</li>
+</ul>
+<p><strong>Textblob</strong>
+It provides a simple API for diving deep into common NLP tasks, such as part-of-speech tagging, noun
+phrase extraction, sentiment analysis, classification, and much more. The package offers language a translation module.
+We can also use TextBlob for </p>
+<ul>
+<li>tagging purposes: it is the process of denoting a word in a text (corpus) as corresponding to a particular part of speech.</li>
+<li>to deal with spelling errors</li>
+</ul>
+<p><strong>SpaCy</strong></p>
+<p>Provides very fast and accurate syntactic analysis (the fastest of any library released) and also offers named entity recognition and ready access to word vectors. <strong>Entity recognition</strong> is the process used to classify multiple
+entities found in a text in predefined categories, such as a person, objects, location, organizations, dates, events, etc. <strong>Word vector</strong> refers to the mapping of the words or phrases from vocabulary to a vector of real numbers. SpaCy also offers dependency parsing, which could be further utilized to extract noun phrases from the text.</p>
+<p><strong>Gensim</strong></p>
+<p>It is used primarily for topic modeling and document similarity.
+Gensim is most useful for tasks such as getting a word vector of a word.</p>
+<p>Gensim offers LDA (latent dirichlet allocation), which allows</p>
+<ul>
+<li>estimation from a training corpus and</li>
+<li>inference of topic distribution on new, unseen documents. </li>
+</ul>
+<p>The model can also be updated with new documents for online training.</p>
+<p><strong>Pattern</strong></p>
+<p>It is useful for a variety of NLP tasks, such as part-of-speech taggers, n-gram searches, sentiment
+analysis, and WordNet and machine learning, such as vector space
+modeling, k-means clustering, Naive Bayes, K-NN, and SVM classifiers.</p>
+<p><strong>Stanford CoreNLP</strong></p>
+<p>Stanford CoreNLP (https://stanfordnlp.github.io/CoreNLP/) provides
+the base forms of words; their parts of speech; whether they are names of
+companies, people, etc.; normalizes dates, times, and numeric quantities;
+marks up the structure of sentences in terms of phrases and syntactic
+dependencies; indicates which noun phrases refer to the same entities;
+indicates sentiment; extracts particular or open-class relations between
+entity mentions; gets the quotes people said; etc.</p>
+<h3 id="3-getting-started-with-nlp">3. Getting Started with NLP</h3>
+<ul>
+<li>
+<p>Text Search Using Regular Expressions: Regular expressions are a very useful means of searching for a particular
+type of design or wordset from a given text. A regular expression (RE)
+specifies a set of strings that match it. The functions in this module allow
+you to check if a given string matches a particular RE (or if a given RE
+matches a particular string, which comes down to the same thing).</p>
+</li>
+<li>
+<p>Text to List: You can read a text file and convert it into a list of words or list of sentences,
+according to your needs.</p>
+</li>
+<li>
+<p>Preprocessing the Text: There is a large number of things you could do to preprocess the text. For
+example, replacing one word with another, removing or adding some
+specific type of words, etc.</p>
+</li>
+<li>
+<p>Accessing Text from the Web: A text file from a URL can be accessed using urllib.</p>
+</li>
+<li>
+<p>Removal of Stopwords: A stopword is a commonly used word (such as the) that a search engine has been programmed to ignore.</p>
+</li>
+<li>
+<p>Counter Vectorization: Counter vectorization is a SciKit-Learn library tool that takes any mass of
+text and returns each unique word as a feature, with a count of the number
+of times a particular word occurs in the text.</p>
+</li>
+<li>
+<p><strong>TF-IDF Score</strong>: TF-IDF is an acronym of two terms: term frequency and inverse document
+frequency. TF is the ratio representing the count of specific words to the
+total number of words in a document. Suppose that a document contains
+100 words, wherein the word happy appears five times. The term frequency
+(i.e., tf ) for happy is then (5/100) = 0.05. IDF, on the other hand, is a
+log ratio of the total number of documents to a document containing a
+particular word. Suppose we have 10 million documents, and the word
+happy appears in 1,000 of them. The inverse document frequency (i.e., idf ),
+then, would be calculated as log (10,000,000/1,000) = 4. Thus, the TF-IDF
+weight is the product of these quantities: 0.05 �� 4 = 0.20.</p>
+</li>
+<li>
+<p>BM25, which is used to score a document on the basis of its relation to a query. BM25 ranks a
+set of documents using the query terms of each of the documents,
+irrespective of the relationship between the keywords of the query
+within a document.</p>
+</li>
+<li>
+<p>Text Classifier: Text can be classified into various classes, such as positive and negative.
+<em>TextBlob</em> offers many such architectures.</p>
+</li>
+</ul>
+<h3 id="4introduction-to-deep-learning">4.Introduction to Deep Learning</h3>
+<p>The collection of algorithms implemented under deep learning have
+similarities with the relationship between stimuli and neurons in the
+human brain. 
+Neural networks are a biologically inspired paradigm (imitating the
+functioning of the mammalian brain) that enables a computer to learn
+human faculties from observational data. They currently provide solutions
+to many problems: image recognition, handwriting recognition, speech
+recognition, speech analysis, and NLP.</p>
+<p>A deep neural network is simply a feed forward neural network with multiple
+hidden layers. If there are many layers in the network, then we say that the network is
+deep.</p>
+<h3 id="41-basic-structure-of-neural-networks">4.1 Basic Structure of Neural Networks</h3>
+<p>The basic principle behind a neural network is a collection of basic
+elements, artificial neuron or perceptron, that were first developed in the
+1950s by Frank Rosenblatt. They <strong>take several binary inputs</strong>, x1, x2, ..., xN
+and produce a <strong>single binary output</strong> if the sum is greater than the activation
+potential. The neuron is said to <strong>���fire���</strong> whenever activation potential is
+exceeded and <strong>behaves as a step function</strong>. The neurons that fire pass along
+the signal to other neurons connected to their dendrites, which, in turn,
+will fire, if the activation potential is exceeded, thus producing a cascading
+effect.</p>
+<p>As not all inputs have the same emphasis, <strong>weights are attached</strong> to each
+of the inputs, x_i to allow the model to assign more importance to some
+inputs. Thus, output is 1, if the weighted sum is greater than activation
+potential or bias, i.e.,</p>
+<p><img alt="outputbias" src="https://user-images.githubusercontent.com/37953610/57540906-bf3e9c80-7345-11e9-8ea7-cc2e2ed09ea8.JPG" /></p>
+<p><strong>Sigmoid</strong>
+A modified form was created to behave more predictably, i.e., small changes in weights and bias cause only a small change in output.
+There are two main modifications.</p>
+<ul>
+<li>The inputs can take on any value between 0 and 1, instead of being binary.</li>
+<li>To make the output behave more smoothly for given
+inputs, x1, x2, ���, xN, and weights. w1, w2, ���, wN, and bias,
+b, use the sigmoid function:</li>
+</ul>
+<p><img alt="sigmoidfunc" src="https://user-images.githubusercontent.com/37953610/57541133-3ffd9880-7346-11e9-9ca0-e602f2f9a48e.JPG" /></p>
+<p><img alt="sigmoidplot" src="https://user-images.githubusercontent.com/37953610/57541489-1002c500-7347-11e9-9a11-200dab4ebf64.JPG" /></p>
+<p>The smoothness of the exponential function, or ��, means that small
+changes in weights and bias will produce a small change in the output
+from the neuron (the change could be a linear function of changes in
+weights and bias).</p>
+<p><strong>Rectified linear unit (ReLU)</strong>
+This keeps the activation guarded at zero. But this function shows some problems:
+- when the learning rate is set to a higher value, as this triggers weight updating that doesn���t
+allow the activation of the specific neurons, thereby making the gradient
+of that neuron forever zero.
+- the explosion of the activation function, as the input value, xj, is itself the output here</p>
+<p><strong>LReLUs (Leaky ReLUs)</strong>
+These mitigate the issue of dying ReLUs by introducing a marginally reduced
+slope (~0.01) for values of x less than 0. LReLUs do offer successful scenarios, although not always.</p>
+<p><strong>ELU (Exponential Linear Unit)</strong> These offer negative
+values that push the mean unit activations closer to
+zero, thereby speeding the learning process, by moving
+the nearby gradient to the unit natural gradient. For a
+better explanation of ELUs, refer to the original paper
+by Djork-Arn�� Clevert, available at https://arxiv.
+org/abs/1511.07289.</p>
+<p><strong>Softmax</strong> Also referred to as a normalized exponential
+function, this transforms a set of given real values in
+the range of (0,1), such that the combined sum is 1.</p>
+<p>The layers between input and output are referred to as hidden
+layers, and the density and type of connections between layers is the
+configuration.</p>
+<p><img alt="MLPpict" src="https://user-images.githubusercontent.com/37953610/57542434-97513800-7349-11e9-8fa5-556935bc4df5.JPG" /></p>
+<p>References: </p>
+<ul>
+<li>articles published by Geoffrey Hinton: (www.cs.toronto.edu/~hinton/)</li>
+<li>http://deeplearning.net/</li>
+</ul>
+<h3 id="42-types-of-neural-networks">4.2 Types of Neural Networks**</h3>
+<p>For neural networks to learn in a faster and more
+efficient way, various neurons are placed in the network in such a way as to
+maximize the learning of the network for the given problem. 
+If the neurons are placed with connections among them taking
+the form of cycles, then they form networks such as <strong>feedback, recursive,
+or recurrent neural networks.</strong> If, however, the connections between the
+neurons are acyclic, they form networks such as <strong>feedforward neural
+networks.</strong></p>
+<p><strong>Feedforward Neural Networks</strong>
+Data movement in any feedforward neural network is
+from the input layer to output layer, via present hidden layers, restricting
+any kind of loops. Output from one layer serves as input
+to the next layer, with restrictions on any kind of loops in the network
+architecture.</p>
+<p><img alt="feddforwardNN" src="https://user-images.githubusercontent.com/37953610/57543048-290d7500-734b-11e9-980f-5109a07ec240.JPG" /></p>
+<p><strong>Multilayer Perceptrons</strong>
+Multilayer perceptrons (MLPs) belong to the category of feedforward
+neural networks and are made up of three types of layers: an input layer,
+one or more hidden layers, and a final output layer. A normal MLP has the
+following properties:
+- An input layer using linear functions
+- Hidden layers with any number of neurons that using activation function, such as
+sigmoid
+- Output layer that use  an activation function giving any number of outputs</p>
+<p>As the output given by an MLP depends only on the current input
+and not on past or future inputs, so MLPs are considered apt for resolving
+<strong>classification problems</strong>.</p>
+<p>Following are a few of the features of network architecture that have a
+direct impact on its performance:</p>
+<ul>
+<li><strong>Hidden layers:</strong> These contribute to the generalization factor of the network. In most cases, a single layer is sufficient to encompass the approximation of any desired function, supported with a sufficient number of neurons.</li>
+<li><strong>Hidden neurons:</strong> The number of neurons present across the hidden layer(s) that can be selected by using any kind of formulation. A basic rule of thumb is to select count between one and a few input units. Another means is to use cross-validation and then check the plot between the number of neurons in the hidden layer(s) and the average mean squared error (MSE) with respect to each of the combinations, finally selecting the combination with the least MSE value. It also depends on the degree of nonlinearity or the initial problem dimensionality. It is, thus, more of an adaptive process to add/delete the neurons.</li>
+<li><strong>Output nodes:</strong> The count of output nodes is usually equal to the number of classes we want to classify the target value.</li>
+<li><strong>Activation functions:</strong> These are applied on the inputs of individual nodes. A set of nonlinear functions are used to make the
+output fall within a desired range, thereby preventing the paralysis of the network. In addition to the nonlinearity, the continuous differentiability of these functions helps in preventing the inhibition of the training of neural networks.</li>
+</ul>
+<p><strong>Convolutional Neural Networks</strong>
+Convolutional neural networks are well adapted <strong>for image recognition and
+handwriting recognition.</strong> Their structure is based on sampling a window
+or portion of an image, detecting its features, and then using the features
+to build a representation. As is evident by this description, this leads to
+the use of several layers, thus these models were the first deep learning
+models.</p>
+<p><strong>Recurrent Neural Networks</strong></p>
+<p>Recurrent neural networks are used when a data pattern changes over time.  An RNN applies the same layer to the input at each time step, using the output (i.e., the state of previous time steps as inputs). RNNs have feedback loops in which the output from the previous firing or time index T is fed as one of the inputs at time index T + 1. </p>
+<p>There might be cases in which the output of the neuron is fed to itself as input. As these are well-suited for applications involving sequences, they are widely used in problems related to videos, which are a time sequence of images, and for <strong>translation purposes</strong>, wherein understanding the next word is based on the context of the previous text. </p>
+<p>There are various types of RNNs:</p>
+<ul>
+<li>
+<p>Encoding recurrent neural networks: This set of RNNs enables the network to take an input of the sequence form (Figure 1-12).</p>
+</li>
+<li>
+<p>Generating recurrent neural networks: Such
+networks basically output a sequence of numbers or
+values, like words in a sentence.</p>
+</li>
+<li>
+<p>General recurrent neural networks: These
+networks are a combination of the preceding two
+types of RNNs. General RNNs are used
+to generate sequences and, thus, are widely used in
+NLG (natural language generation) tasks.</p>
+</li>
+</ul>
+<p><strong>Encoder-Decoder Networks</strong>
+These networks use one network to create an internal
+representation of the input, or to ���encode��� it, and that representation is
+used as an input for another network to produce the output. This is useful
+to go beyond a classification of the input. The final output can be in the
+same modality, i.e., <strong>language translation</strong>, or a different modality, e.g., <strong>text
+tagging of an image</strong>, based on concepts. For reference, one can refer to the
+paper ���Sequence to Sequence Learning with Neural Networks,��� published
+by the team at Google: (https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf).</p>
+<p><strong>Recursive Neural Networks</strong>
+In a recursive neural network, a fixed set of weights is
+recursively applied onto the network structure and is primarily used
+to discover the hierarchy or structure of the data. Whereas an RNN is a
+chain, a recursive neural network takes the form of a treelike structure.
+Such networks have great use in the field of NLP, such as <strong>to decipher
+the sentiment of a sentence.</strong> The overall sentiment is not dependent on
+the individual works only, but also on the order in which the words are
+syntactically grouped in the sentence.</p>
+<h3 id="43-stochastic-gradient-descent">4.3 Stochastic Gradient Descent</h3>
+<p>It is an iterative algorithm that <strong>minimizes a loss function</strong> by subsequently updating the parameters of the function.</p>
+<h3 id="44-backpropagation">4.4 Backpropagation</h3>
+<p>Understanding this algorithm would definitely give you insights into problems related to deep learning:
+- learning problems
+- slow learning
+- exploding gradients
+- diminishing gradients.</p>
+<p>The Backpropagation help us to find the partial derivative of the loss with respect to each weight and it solves the problem of slowness of Gradient Descent. This algorithm is the workhorse of the training procedure for every deep learning algorithm. More detailed information can be found here: www.cs.toronto.edu/~hinton/backprop.html.</p>
+<p>Backpropagation consists of two parts see the next figure):
+- Forward pass, wherein we initialize the weights and
+make a feedforward network to store all the values
+- Backward pass, which is performed to have the
+stored values update the weights</p>
+<p><img alt="backpropNN" src="https://user-images.githubusercontent.com/37953610/57545068-1c8c1b00-7351-11e9-93a4-0b2e1fb4a9f6.JPG" /></p>
+<p>Initially, all the edge weights are randomly assigned. For every input in
+the training dataset, the ANN is activated, and its output is observed. This
+output is compared with the desired output that we already know, and the
+error is ���propagated��� back to the previous layer. This error is noted, and
+<strong>the weights are ���adjusted��� accordingly</strong>. This process is repeated until the
+output error is below a predetermined threshold.
+Once the preceding algorithm terminates, we have a ���learned��� ANN,
+which we consider to be ready to work with ���new��� inputs. This ANN is said
+to have learned from several examples (labeled data) and from its mistakes
+(error propagation).</p>
+<h3 id="5-neural-language-model">5. Neural Language Model</h3>
+<p>The feedforward neural net language model (FNNLM) proposed by Bengio
+introduces a feedforward neural network consisting of a single hidden
+layer that predicts the future words, in our example, only a single word, of
+the sequence. The components of these original models are still used across current word
+embedding models. Some of these components include the following:</p>
+<ol>
+<li><em>Embedding layer</em>: This keeps a record of the representation of all the words in the training dataset. It is initialized with a set of random weights. The embedding layer is made up of three parts: </li>
+<li>the size of the vocabulary, </li>
+<li>the output size of the vector in which all the words will be embedded,</li>
+<li>
+<p>the length of the input sequences to the model. 
+The resulting output of an embedding layer is a two-dimensional vector, which has the final embedding for all the words present in the given sequence of words.</p>
+</li>
+<li>
+<p><em>Intermediate layer(s)</em>: The hidden layers, ranging from initial to final layers and with a count of one or more, that produce the representation of the input text data by applying the nonlinear functions in the neural network on the word embeddings of the previous n-words.</p>
+</li>
+<li><em>Softmax layer</em>: This is the final layer of the neural network architecture and returns a probability distribution over all the words present in the input vocabulary.</li>
+</ol>
+<h3 id="6-subsampling-frequent-words">6. Subsampling Frequent Words</h3>
+<p>The subsampling approach was introduced by
+Mikolov et al. in their paper ���Distributed Representations of Words and
+Phrases and their Compositionality.��� 
+The subsampling uses the the frequency of the words that compounds the corpus to select the words to be kept for modeling purposes by checking the count of overall words as well.
+By including subsampling, significant
+speed is gained in the training process, and word representations are
+learned in a more regular manner.</p>
+<h3 id="7-negative-sampling">7. Negative Sampling</h3>
+<p>Negative sampling is a simplified form of the noise contrastive estimation
+(NCE) approach, as it makes certain assumptions while selecting the
+count of the noise, or negative, samples, and their distribution.
+It is used as an alternative to the hierarchical softmax function. Although
+negative sampling is used at the time of training the model, at the time of
+inference, the full softmax value is to be calculated, to obtain a normalized
+probability score.</p>
+<p><strong>The word2vec models</strong> have helped in achieving better quality of vector
+representations of words by making use of the combination of models on
+a collection of syntactic and semantic language tasks. With the advances
+in the computation resources, faster algorithms, and availability of textual
+data, it is possible to train high quality word vectors as compared to the
+earlier proposed neural network models.</p>
+<h3 id="8-deep-learning-libraries">8. Deep Learning Libraries</h3>
+<p>In this section we will highlight only the main featue of the libraries.</p>
+<p><strong>Theano</strong></p>
+<p>It is a numerical
+computation library for Python with syntaxes similar to NumPy. It
+is efficient at performing complex mathematical expressions with
+multidimensional arrays. This makes it is a perfect choice for neural
+networks. The link http://deeplearning.net/software/theano will give the
+user a better idea of the various operations involved.</p>
+<p>Many tools have been implemented on top of Theano. Principally, it
+includes
+��� Blocks http://blocks.readthedocs.org/en/latest/
+��� Keras http://keras.io/
+Lasagne http://lasagne.readthedocs.org/en/
+latest/
+��� PyLearn2 http://deeplearning.net/software/
+pylearn2/</p>
+<p><strong>TensorFlow</strong></p>
+<p>TensorFlow is an open sourced library by Google for large-scale machine
+learning implementations. It has been designed in such a way that
+computations on CPUs or GPU systems across a single desktop or servers
+or mobile devices are catered to by a single API.</p>
+<p><strong>Keras</strong></p>
+<p>Keras is a highly modular neural networks library, which runs on top of
+Theano or TensorFlow. Keras is one of the libraries which supports both
+CNNs and RNNs and runs effortlessly on GPU and CPU.
+A model is understood as a sequence or a graph of standalone,
+fully configurable modules that can be plugged together with as little
+restrictions as possible. In particular, neural layers, cost functions,
+optimizers, initialization schemes, activation functions, regularization
+schemes are all standalone modules that could be combined to create new
+models.</p>
+</body></html>
