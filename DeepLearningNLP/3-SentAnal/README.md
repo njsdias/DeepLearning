@@ -26,3 +26,13 @@ evaluation of the proposed model on three different types of tasks.
 The model has turned out to be quite promising, compared to other
 current sentence-embedding techniques, for all three of the preceding
 types of tasks.
+
+## 2. Self-Attentive Sentence Embedding
+
+In the paper concerned uses a new self-attention mechanism that allows it to extract different aspects of the
+sentence into multiple vector representations. The matrix structure, with the penalization term, gives the model a greater capacity to disentangle the latent information from the input sentence. 
+
+Moreover, the linguistic structures are not used to guide the sentence
+representation model. Additionally, using this method, one can easily
+create visualizations that help in the interpretation of the learned
+representations.
