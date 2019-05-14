@@ -238,8 +238,49 @@ information in that sequence, to produce the relevant answers.
 
 ![seq2seq](https://user-images.githubusercontent.com/37953610/57705451-db02b500-765b-11e9-8e2b-8b5c0fbc6601.JPG)
 
+## 6. Attention (Mechanism) Scoring
 
+Basic seq2seq models work well for normal tasks on short sentences. 
+normal LSTMs can remember about 30 time steps and start to drop off very quickly after it. 
+The attention mechanisms perform better on the short-term length sequences and can reach a maximum length of about 50 time
+steps. However, until now, thare are not models that can really go back in time and remember even a few
+paragraphs.
 
+Attention models look at the whole content shown and work out ways to
+figure out which word is most important for each of the words in the text.
+So, it sort of gives a score to every word in your sentence, and with that, it
+is able to get a sense that there are certain words that rely on some words a
+lot more than other ones.
 
+The best way to understand
+attention models is to think of them as kind of a little memory module
+that basically sits above the network and then looks at the words and picks
+the ones that are most important.
 
+For example, in the second sentence the italic words were selected as the most important words in the sentence:
 
+- Last month everyone went to the club, but I stayed at home.
+- Last _month_ everyone went to the _club_, but I _stayed_ at home.
+
+This helps in translation to different languages and for retaining context information as
+well, such as the event happened “last month,” as this time information is required while doing the NLP tasks.
+
+An attention vector (shown in Figure) helps in increasing the model’s performance, by capturing the information from the overall
+input sentence at each of the steps of the decoder. This step makes sure that the decoder is not dependent only on the last decoder state but also on the combined weights of all the input states. The best technique is to use bidirectional LSTMs, along with attention on top of it, in the encoder.
+
+![atten_score](https://user-images.githubusercontent.com/37953610/57708289-fcb26b00-7660-11e9-9f64-5483ba9f4ab7.JPG)
+
+## 7. Teaching Forcing
+
+To understand the process, as we train the teacher forcing model, while
+doing the prediction part, we check whether every word predicted is right
+and use this information while backpropagating the network. However, we
+don’t feed the predicted word to the next time steps. Instead, while making
+every next word prediction, we use the correct word answer of last time
+step for next time step prediction. That’s why the process is called “teacher
+forcing.” We are basically forcing the decoder part to not only use the
+output of the last hidden state but to actually use the correct answers. This
+improves the training process for **text generation** significantly. This process
+is not to be followed while doing the actual scoring on the test dataset.
+Make use of the learned weights for scoring step. The teacher forcing technique was developed as an alternative to
+backpropagation-through-time for training an RNN.
